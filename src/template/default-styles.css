@@ -1,0 +1,308 @@
+/* ============================================
+   MD2PDF — Default Styles
+   Design tokens from Anthropic/Claude DESIGN.md
+   ============================================ */
+
+/* === CSS Custom Properties (Design Tokens) === */
+:root {
+  --ink: #141413;
+  --body: #3d3d3a;
+  --body-strong: #252523;
+  --muted: #6c6a64;
+  --muted-soft: #8e8b82;
+  --canvas: #faf9f5;
+  --surface-soft: #f5f0e8;
+  --surface-card: #efe9de;
+  --surface-cream-strong: #e8e0d2;
+  --surface-dark: #181715;
+  --surface-dark-soft: #1f1e1b;
+  --surface-dark-elevated: #252320;
+  --hairline: #e6dfd8;
+  --hairline-soft: #ebe6df;
+  --primary: #cc785c;
+  --primary-active: #a9583e;
+  --on-dark: #faf9f5;
+  --on-dark-soft: #a09d96;
+  --accent-teal: #5db8a6;
+  --accent-amber: #e8a55a;
+
+  --font-display: "Tiempos Headline", "Cormorant Garamond", "EB Garamond", Garamond, "Times New Roman", serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Noto Sans SC", sans-serif;
+  --font-code: "JetBrains Mono", "Cascadia Code", "Fira Code", "Cascadia Mono", ui-monospace, "SF Mono", Consolas, "Courier New", monospace;
+
+  --rounded-xs: 4px;
+  --rounded-sm: 6px;
+  --rounded-md: 8px;
+  --rounded-lg: 12px;
+  --rounded-xl: 16px;
+  --rounded-pill: 9999px;
+
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+}
+
+/* === Reset & Base === */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.75;
+  color: var(--body);
+  background-color: var(--canvas);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* === Content Container === */
+article.md-content {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+/* === Typography === */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--ink);
+  margin-top: 1.8em;
+  margin-bottom: 0.4em;
+}
+
+h1 {
+  font-size: 2.5em;
+  letter-spacing: -1px;
+  border-bottom: 2px solid var(--hairline);
+  padding-bottom: 0.25em;
+}
+
+h2 {
+  font-size: 1.75em;
+  letter-spacing: -0.5px;
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 0.2em;
+}
+
+h3 { font-size: 1.35em; letter-spacing: -0.3px; }
+h4 { font-size: 1.15em; }
+h5 { font-size: 1em; color: var(--body-strong); }
+h6 { font-size: 0.9em; color: var(--muted); }
+
+p { margin: 0 0 1em; }
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+strong { font-weight: 600; color: var(--body-strong); }
+
+/* === Inline Code (light on cream) === */
+code:not(pre code) {
+  font-family: var(--font-code);
+  font-size: 0.875em;
+  background: var(--surface-card);
+  color: var(--ink);
+  padding: 0.18em 0.4em;
+  border-radius: var(--rounded-xs);
+  border: 1px solid var(--hairline-soft);
+}
+
+/* === Code Blocks (dark background — core requirement) === */
+pre {
+  background: var(--surface-dark);
+  border-radius: var(--rounded-lg);
+  padding: var(--spacing-lg);
+  overflow-x: auto;
+  margin: 1.2em 0;
+  border: 1px solid var(--surface-dark-elevated);
+}
+
+pre code {
+  font-family: var(--font-code) !important;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--on-dark);
+  background: none !important;
+  border: none;
+  padding: 0;
+}
+
+pre code .hljs { color: var(--on-dark); }
+
+/* === Blockquote === */
+blockquote {
+  margin: 1em 0;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-left: 4px solid var(--primary);
+  color: var(--muted);
+  background: var(--surface-soft);
+  border-radius: 0 var(--rounded-sm) var(--rounded-sm) 0;
+}
+
+blockquote p:last-child { margin-bottom: 0; }
+
+/* === Tables === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.2em 0;
+  font-size: 0.95em;
+}
+
+thead th {
+  background: var(--surface-card);
+  color: var(--ink);
+  font-weight: 600;
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 2px solid var(--hairline);
+}
+
+tbody td {
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--hairline-soft);
+  color: var(--body);
+}
+
+tbody tr:nth-child(even) { background: var(--surface-soft); }
+
+/* === Images === */
+img { max-width: 100%; height: auto; display: block; margin: 1.2em 0; border-radius: var(--rounded-sm); }
+
+/* === Lists === */
+ul, ol { padding-left: 1.8em; margin: 0.6em 0 1em; }
+li { margin: 0.25em 0; line-height: 1.7; }
+
+/* Task Lists */
+.task-list-item { list-style: none; margin-left: -1.5em; }
+.task-list-item input[type="checkbox"] { margin-right: 0.5em; accent-color: var(--primary); }
+
+/* === Horizontal Rule === */
+hr {
+  border: none;
+  border-top: 1px solid var(--hairline);
+  margin: var(--spacing-xxl) 0;
+}
+
+/* === TOC === */
+nav.table-of-contents {
+  background: var(--surface-card);
+  border: 1px solid var(--hairline);
+  border-radius: var(--rounded-lg);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  margin: 0 0 var(--spacing-xl);
+}
+
+nav.table-of-contents > p {
+  font-family: var(--font-display);
+  font-size: 1.1em;
+  color: var(--ink);
+  margin: 0 0 var(--spacing-sm);
+  font-weight: 500;
+}
+
+nav.table-of-contents ul {
+  margin: 0;
+  padding-left: 1.5em;
+  list-style-type: none;
+}
+
+nav.table-of-contents li { margin: 4px 0; }
+
+nav.table-of-contents a {
+  color: var(--body);
+  font-size: 0.95em;
+  transition: color 0.15s;
+}
+
+nav.table-of-contents a:hover {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+/* === Footnotes === */
+.footnotes {
+  border-top: 1px solid var(--hairline);
+  margin-top: var(--spacing-xxl);
+  padding-top: var(--spacing-lg);
+  font-size: 0.9em;
+  color: var(--muted);
+}
+
+.footnotes ol { padding-left: 1.5em; }
+
+/* === Definition Lists === */
+dl { margin: 0 0 1em; }
+dt { font-weight: 600; color: var(--body-strong); margin-top: 0.6em; }
+dd { margin-left: 1.5em; color: var(--body); }
+
+/* === Keyboard / Mark === */
+kbd {
+  font-family: var(--font-code);
+  font-size: 0.85em;
+  background: var(--surface-card);
+  border: 1px solid var(--hairline);
+  border-radius: var(--rounded-xs);
+  padding: 1px 6px;
+  box-shadow: 0 1px 0 var(--hairline);
+}
+
+mark {
+  background: var(--accent-amber);
+  color: var(--ink);
+  padding: 0.1em 0.2em;
+  border-radius: 2px;
+}
+
+/* ============================================
+   Print Styles (for PDF output)
+   ============================================ */
+@media print {
+  body {
+    font-size: 12pt;
+    color: #000;
+    background: #fff;
+  }
+
+  article.md-content {
+    max-width: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #000;
+    page-break-after: avoid;
+  }
+
+  h1, h2 { border-bottom-color: #ccc; }
+
+  /* Code blocks stay dark in print (printBackground: true) */
+  pre {
+    background: var(--surface-dark);
+    page-break-inside: avoid;
+  }
+
+  pre code { color: var(--on-dark); }
+
+  blockquote {
+    border-left: 3px solid #999;
+    page-break-inside: avoid;
+  }
+
+  img { page-break-inside: avoid; max-width: 100% !important; }
+  table { page-break-inside: avoid; }
+
+  a { color: #000; text-decoration: underline; }
+
+  @page {
+    margin: 25mm;
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "format": "html",
+  "title": "",
+  "theme": "github-dark",
+  "highlight": true,
+  "toc": false,
+  "tocDepth": 3,
+  "css": null,
+  "lang": "zh-CN",
+
+  "pdf": {
+    "pageSize": "A4",
+    "margin": "20mm",
+    "landscape": false,
+    "printBackground": true,
+    "scale": 1
+  },
+
+  "png": {
+    "width": 1200,
+    "scale": 2,
+    "fullPage": true
+  },
+
+  "puppeteer": {
+    "executablePath": null,
+    "headless": true,
+    "timeout": 30000
+  }
+}

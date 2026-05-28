@@ -1,0 +1,10 @@
+node_modules/
+output/
+test/output-*.html
+test/output-*.pdf
+test/output-*.png
+test/output-*.docx
+test/cli-test.*
+*.log
+.env
+.deep-copilot/
