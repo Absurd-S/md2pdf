@@ -73,8 +73,7 @@ md2pdf convert doc.md -f pdf -o doc.pdf
 
 ## Screenshots
 
-<!-- Add screenshots after first launch -->
-<!-- ![screenshot](https://user-images.githubusercontent.com/...) -->
+![screenshot](./src/screenshot.png)
 
 ## API
 

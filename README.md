@@ -79,8 +79,7 @@ md2pdf convert doc.md -f pdf -o doc.pdf
 
 ## 页面截图
 
-<!-- 首次启动后在此处补充截图 -->
-<!-- ![screenshot](https://user-images.githubusercontent.com/...) -->
+![screenshot](./src/screenshot.png)
 
 ## API 接口
 
