@@ -8,3 +8,4 @@ test/cli-test.*
 *.log
 .env
 .deep-copilot/
+.gitignore
