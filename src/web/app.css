@@ -250,6 +250,9 @@ a:hover { text-decoration: underline; }
 .preview-content pre code {
   font-family: var(--font-code); font-size: 13px; line-height: 1.6;
   color: var(--on-dark); background: none; padding: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .preview-content blockquote {

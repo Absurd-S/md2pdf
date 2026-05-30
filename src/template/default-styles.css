@@ -132,6 +132,9 @@ pre code {
   background: none !important;
   border: none;
   padding: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 pre code .hljs { color: var(--on-dark); }
